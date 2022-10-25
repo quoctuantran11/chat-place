@@ -1,0 +1,380 @@
+.chat-container {
+    display: flex;
+    height: 100vh;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.friends-list {
+    width: 30%;
+    padding: 1.2rem .8rem;
+}
+
+.divider {
+    border: .5px solid rgb(202, 202, 202);
+}
+
+.conversation-box {
+    width: 70%;
+    display: flex;
+    flex-flow: column;
+}
+
+.friends-list h3 {
+    margin-left: .2rem;
+}
+
+.search-form {
+    padding: .6rem;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    margin-top: .5rem;
+    background-color: rgba(230, 230, 230, 0.517);
+}
+
+.search-form input {
+    border: none;
+    margin-left: .5rem;
+    width: 100%;
+    background-color: transparent;
+}
+
+.search-form input:focus {
+    outline: none;
+}
+
+.friends-list ul {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.friends-list ul li {
+    width: 100%;
+}
+
+.friends-list ul li input {
+    display: none;
+}
+
+.friends-list ul li input:checked + label > .in-list {
+    border-radius: 5px;
+    background-color: rgba(230, 230, 230, 0.517);
+}
+
+.profile {
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+
+}
+
+.profile button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.in-list:focus,
+.in-list:hover {
+    border-radius: 5px;
+    background-color: rgba(230, 230, 230, 0.517);
+    cursor: pointer;
+}
+
+.in-list:focus {
+    border-radius: 5px;
+    background-color: rgba(230, 230, 230, 0.517);
+}
+
+.active {
+    border-radius: 5px;
+    background-color: rgba(230, 230, 230, 0.517);
+}
+
+.profile-picture {
+    border-radius: 100%;
+    width: 2.2rem;
+    height: 2.2rem;
+    background-image: url("../../assets/images/clown_rage.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.profile p {
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.in-box {
+    padding: .5rem 1rem;
+    box-shadow: 2px 0 2px 2px rgb(202, 202, 202);
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    margin-left: .5rem;
+    margin-top: .2em;
+}
+
+.status-color {
+    border-radius: 100%;
+    width: .5em;
+    height: .5em;
+}
+
+.status-active {
+    background-color: rgb(27, 149, 27);
+}
+
+.status-inactive {
+    background-color: rgb(252, 232, 58);
+}
+
+.status-busy {
+    background-color: rgb(255, 56, 56);
+}
+
+.status-out {
+    background-color: rgb(158, 167, 173);
+}
+
+.status h5 {
+    margin-left: .2em;
+    font-weight: 100;
+    color: rgb(67, 66, 66);
+}
+
+.help-btns {
+    margin-left: auto;
+}
+
+.help-btns button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.chat-place {
+    padding: 0 1.5rem 1rem 1.5rem;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    height: 100%;
+}
+
+.bottom-box form,
+.typing-box {
+    display: flex;
+}
+
+.bottom-box {
+    margin-top: auto;
+}
+
+.typing-box {
+    padding: .6rem;
+    border-radius: 1em;
+    background-color: rgba(230, 230, 230, 0.517);
+    width: fit-content;
+}
+
+.typing-box input {
+    border: none;
+    background-color: transparent;
+    width: 45rem;
+}
+
+.typing-box input:focus {
+    outline: none;
+}
+
+.bottom-box button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.no-result {
+    text-align: center;
+}
+
+.no-result p:first-child {
+    color: rgb(136, 133, 133);
+}
+
+.no-result button {
+    color: black;
+    font-size: 10pt;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.chat-box {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column;
+    overflow-y: auto;
+    height: 10px;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+}
+
+.chat-box h5 {
+    font-weight: 300;
+    color: rgba(65, 61, 61, 0.795)
+}
+
+.chat-box .loading {
+    width: 15px;
+    height: 15px;
+    border-width: 2px;
+    margin: .5em auto;
+}
+
+.no-history {
+    display: flex;
+    align-items: center;
+    margin: auto auto 1em auto;
+}
+
+.divider-chat {
+    width: 15em;
+    border: .5px solid rgba(189, 185, 185, 0.795);
+    height: 0;
+}
+
+.message-box {
+    margin-left: auto;
+    margin-right: .5em;
+    margin-top: .5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-box:first-child {
+    margin-top: 1em;
+}
+
+.message-box:last-child {
+    margin-bottom: 1em;
+}
+
+.message-box p {
+    border: 1px solid black;
+    width: fit-content;
+    padding: .3rem;
+    border-radius: 5px;
+    margin-top: .2rem;
+}
+
+.message-box h6 {
+    font-weight: 100;
+    color: rgba(65, 61, 61, 0.795);
+    font-size: 8pt;
+}
+
+.me p {
+    align-self: flex-end;
+}
+
+.me {
+    text-align: right;
+}
+
+.other {
+    margin: .5em 0 0 0;
+}
+
+.profile-features {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height .2s ease-in-out, padding .2s ease-in-out, box-shadow .2s ease-in-out;
+    position: absolute;
+    right: 1em;
+    top: 2em;
+}
+
+.toggle {
+    max-height: 100px;
+    padding: .5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px rgb(216, 216, 216);
+    background-color: white;
+}
+
+.profile-features button {
+    border: none;
+    background-color: transparent;
+    display: block;
+}
+
+.no-time {
+    margin-top: 0;
+}
+
+.no-selection {
+    background: rgb(219, 218, 218);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.status-box {
+    box-shadow: 0 0 2px 2px rgb(216, 216, 216);
+    background-color: white;
+    position: absolute;
+    left: 4em;
+    top: 2.5em;
+    padding: .5rem;
+    display: none;
+}
+
+.status-box button {
+    display: block;
+    width: 100%;
+    cursor:auto;
+    margin-left: 0;
+    text-align: left;
+}
+
+.status-box button:hover {
+    background-color: rgba(65, 61, 61, 0.795);
+}
+
+.appear {
+    display: block;
+}

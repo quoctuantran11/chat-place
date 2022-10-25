@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { userAuthContext, UserAuthProvider } from '../context/authContext';
+import { useAuth } from '../context/authContext';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Chat from '../pages/Chat';
-import { useContext } from 'react';
+import ErrorPage from '../pages/Error';
+import Loading from '../components/Loading';
 
 function PrivateRoute({ element: Component, authenticated }) {
     return (
@@ -20,17 +21,22 @@ function PublicRoute({ element: Component, authenticated }) {
 }
 
 export default function ChatRoute() {
-    const {authenticated, setAuthenticated, loading, setLoading} = useContext(userAuthContext);
+    const {
+        authenticated, 
+        loading,
+    } = useAuth();
     return (
-        <Router>
-            <UserAuthProvider>
+        loading ? <Loading /> : (
+            <Router>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/chat" element ={<PrivateRoute authenticated={authenticated} element={Chat} />} />
-                    <Route path="/login" element={<PublicRoute authenticated={authenticated} element={Login} />} />
+                    <Route path="/login" element={<PublicRoute authenticated={authenticated}
+                     element={Login} />} />
                     <Route path="/register" element={<PublicRoute authenticated={authenticated} element={Login} />} />
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
-            </UserAuthProvider>
         </Router>
+        )
     )
 };
